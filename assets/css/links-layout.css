@@ -101,3 +101,6 @@
 
 /* La ampliacion de texto puede aumentar la altura: nunca se recorta contenido. */
 :root[data-text="large"] .links-page main { justify-content: flex-end; }
+
+/* Menos espacio entre la cabecera y la portada. */
+.links-page main { justify-content: center; }
