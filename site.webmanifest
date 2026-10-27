@@ -1,0 +1,16 @@
+{
+  "name": "JUANAN TECH",
+  "short_name": "JUANAN TECH",
+  "lang": "es",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#040506",
+  "theme_color": "#040506",
+  "icons": [
+    {
+      "src": "assets/logos/isotipo-color.png",
+      "sizes": "1254x1254",
+      "type": "image/png"
+    }
+  ]
+}

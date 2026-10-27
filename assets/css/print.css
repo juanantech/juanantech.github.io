@@ -1,0 +1,8 @@
+body { background: white !important; color: black !important; font-size: 11pt; }
+.site-header, .site-footer, .toc, .copy-button, .actions, .hero-art, .skip-link, dialog, .no-script, .filters, .pagination { display: none !important; }
+.container { width: 100%; } .section, .page-header { padding: 20px 0; }
+.article-layout, .split, .cards, .door-grid { display: block; } .prose { max-width: none; }
+p, li, a, .prose p, .prose li, .article-details dt, .article-details dd { color: black !important; }
+a { text-decoration: underline; } .prose a[href^="https"]::after { content: " (" attr(href) ")"; font-size: 8pt; }
+pre { white-space: pre-wrap; background: #f0f0f0; color: black; }
+h2, h3 { break-after: avoid; } .code-block, .notice { break-inside: avoid; }

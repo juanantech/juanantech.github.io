@@ -1,0 +1,103 @@
+/* Ajuste exclusivo del index de enlaces; conserva el texto y los once iconos. */
+.links-page {
+  --max: 1120px;
+  --fit-gutter: clamp(12px, 3vw, 32px);
+  --fit-space: clamp(8px, 2dvh, 24px);
+  --fit-title: clamp(2rem, min(5vw, 8dvh), 4.3rem);
+  --fit-copy: clamp(.9rem, 1.2vw, 1.025rem);
+  --fit-art: clamp(140px, min(34vw, 43dvh), 380px);
+  --fit-icon: clamp(48px, 8.6dvh, 76px);
+  --fit-gap: clamp(6px, 1dvh, 12px);
+  --fit-brand: 190px;
+  min-height: 100vh;
+  min-height: var(--links-viewport, 100dvh);
+  display: grid;
+  grid-template-rows: auto minmax(min-content, 1fr) max-content;
+}
+.links-page[data-fit="compact"] {
+  --fit-space: clamp(6px, 1.4dvh, 16px);
+  --fit-title: clamp(1.8rem, min(4.7vw, 7.2dvh), 3.8rem);
+  --fit-copy: .9rem;
+  --fit-art: clamp(112px, min(28vw, 36dvh), 320px);
+  --fit-icon: clamp(44px, 7.7dvh, 68px);
+  --fit-gap: 8px;
+  --fit-brand: 172px;
+}
+.links-page[data-fit="tight"] {
+  --fit-space: 6px;
+  --fit-title: clamp(1.65rem, min(4.3vw, 6.4dvh), 3.4rem);
+  --fit-copy: .875rem;
+  --fit-art: clamp(96px, min(24vw, 30dvh), 280px);
+  --fit-icon: clamp(44px, 7dvh, 60px);
+  --fit-gap: 6px;
+  --fit-brand: 156px;
+}
+.links-page .container { width: min(var(--max), calc(100% - 2 * var(--fit-gutter))); }
+.links-page .site-header { flex-shrink: 0; padding-block: clamp(4px, .8dvh, 8px); }
+.links-page .header-inner { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; }
+.links-page .brand img { width: clamp(132px, 16vw, var(--fit-brand)); height: auto; aspect-ratio: 3; }
+.links-page .header-invitation { font-size: clamp(1.125rem, 1.65vw, 1.65rem); }
+.links-page .header-tools { gap: 6px; }
+.links-page main { grid-row: 2; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+.links-page .hero { padding: var(--fit-space) 0 8px; overflow: visible; }
+.links-page .hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(12px, 3vw, 32px); }
+.links-page .hero-grid > div { min-width: 0; }
+.links-page .hero .eyebrow { font-size: .625rem; margin: 0 0 clamp(6px, 1dvh, 12px); letter-spacing: .1em; }
+.links-page .hero h1 { max-width: none; margin: 0; font-size: var(--fit-title); line-height: 1.08; }
+.links-page .hero-copy { font-size: var(--fit-copy); line-height: 1.5; margin: 12px 0 0; }
+.links-page .hero-note { font-size: .6875rem; line-height: 1.45; margin: 10px 0 0; }
+.links-page .hero-art { max-width: none; margin: 0; order: 0; }
+.links-page .hero-art img { width: min(100%, var(--fit-art)); }
+.links-page .page-content--links { padding-block: 8px 4px; }
+.links-page .link-hub { padding-top: 0; }
+.links-page .hub-social { margin-top: 0; }
+.links-page .social-grid-scroll { overflow: visible; }
+.links-page .hub-social .social-list {
+  width: min(100%, calc(5 * var(--fit-icon) + 4 * var(--fit-gap)));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--fit-gap);
+  margin: 0 auto;
+}
+.links-page .hub-social .social-link { display: grid; place-items: center; width: 100%; min-height: 0; height: auto; padding: 0; aspect-ratio: 1; }
+.links-page .hub-social .social-link img { width: min(80%, 64px); height: auto; aspect-ratio: 1; }
+.links-page .hub-social .website-logo { width: calc((100% - 4 * var(--fit-gap)) / 5); min-height: 0; }
+/* El pie tiene su propia fila de altura intrinseca: 17 px en una linea. */
+.links-page .links-footer { grid-row: 3; align-self: end; height: auto; min-height: 0; margin: 0; padding: 2px 0; border-top: 1px solid var(--line); background: var(--bg); }
+.links-page .links-footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 10px; margin-block: 0; padding: 0; font-size: .625rem; line-height: 1.2; }
+.links-page .links-footer__links { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 0 10px; max-width: 100%; margin: 0; padding: 0; }
+.links-page .links-footer__links a { display: inline-block; min-height: 0; margin: 0; padding: 0; color: var(--text); font: inherit; text-underline-offset: 2px; }
+
+@media (max-width: 640px) {
+  .links-page { --fit-art: clamp(64px, 20vw, 84px); --fit-icon: clamp(44px, min(16vw, 7.5dvh), 64px); --fit-title: clamp(1.8rem, min(8vw, 5.2dvh), 2.4rem); --fit-copy: .875rem; }
+  .links-page[data-fit="compact"] { --fit-art: 72px; --fit-title: clamp(1.7rem, min(7.4vw, 4.7dvh), 2.1rem); --fit-copy: .875rem; --fit-icon: clamp(44px, min(15vw, 7dvh), 60px); }
+  .links-page[data-fit="tight"] { --fit-art: 64px; --fit-title: clamp(1.55rem, min(7vw, 4.4dvh), 1.9rem); --fit-copy: .84375rem; --fit-icon: 44px; }
+  .links-page .header-inner { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand tools" "invitation invitation"; gap: 4px 8px; }
+  .links-page .brand { grid-area: brand; }
+  .links-page .brand img { width: min(40vw, 156px); }
+  .links-page .header-tools { grid-area: tools; }
+  .links-page .header-invitation { grid-area: invitation; font-size: 1.125rem; }
+  .links-page .hero-grid { grid-template-columns: minmax(0, 1fr) var(--fit-art); gap: 10px; }
+  .links-page .hero .eyebrow { font-size: .55rem; letter-spacing: .06em; }
+  .links-page .hero-note { font-size: .625rem; }
+  .links-page .links-footer__inner { justify-content: center; text-align: center; }
+  .links-page .links-footer__links { justify-content: center; gap: 0 8px; }
+}
+
+/* En horizontal y con poca altura, portada e iconos comparten la misma fila. */
+@media (min-width: 600px) and (max-height: 540px) {
+  .links-page .site-header { position: static; }
+  .links-page .header-inner { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: none; }
+  .links-page .brand, .links-page .header-tools, .links-page .header-invitation { grid-area: auto; }
+  .links-page .brand img { width: clamp(120px, 18vw, 156px); }
+  .links-page main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: end; align-items: center; gap: 16px; width: min(var(--max), calc(100% - 2 * var(--fit-gutter))); margin-inline: auto; }
+  .links-page .hero { padding-block: 8px; }
+  .links-page .hero-grid { width: 100%; grid-template-columns: minmax(0, 1fr) clamp(48px, 8vw, 88px); gap: 10px; }
+  .links-page .hero h1 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); }
+  .links-page .hero-copy { font-size: .875rem; }
+  .links-page .page-content--links { width: auto; padding-block: 8px 4px; align-self: end; }
+  .links-page .hub-social .social-list { width: calc(5 * var(--fit-icon) + 4 * var(--fit-gap)); }
+  .links-page .links-footer__inner { justify-content: space-between; text-align: left; }
+}
+
+/* La ampliacion de texto puede aumentar la altura: nunca se recorta contenido. */
+:root[data-text="large"] .links-page main { justify-content: flex-end; }
